@@ -1,28 +1,26 @@
 # Instalação do projeto
 
-### Pré-instalação
+### Pre-installation
 
-Caso você já tenha o VirtualEnv instalado, pode pular essa etapa.
+If you already have VirtualEnv installed, you can skip this step.
 
-Para instalar, antes é preciso criar um ambiente virtual. Considere instalar o virtualenvwrapper:
+To install, you first need to create a virtual environment. Consider installing virtualenvwrapper:
 
     $ sudo pip install virtualenvwrapper
 
-Reinicie seu terminal ou execute:
+### Restart your terminal:
 
-    $ source /usr/local/bin/virtualenvwrapper.sh
+### Installation
 
-### Instalação
-
-Crie o virtualenv:
+Create the virtualenv:
 
     $ mkvirtualenv proxy_github_api
 
      
-Instale os pacotes necessários, lembre-se de estar dentro do virtualenv criado:
+Install the necessary packages, remember to be inside the created virtualenv:
 
     $ pip install -r requirements.txt
     $ pip install -r requirements_dev.txt
 
     
-Reinicie seu terminal e vai pra galera.
+Restart your terminal and Have fun.
