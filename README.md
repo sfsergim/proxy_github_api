@@ -28,4 +28,4 @@ Create the virtualenv:
 
 Select Python Interpreter in VSCODE and Execute the application
         
-#Have fun.
+# Have fun.
