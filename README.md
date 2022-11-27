@@ -1,4 +1,4 @@
-# Instalação do projeto
+# Project installation
 
 ### Pre-installation
 
