@@ -27,5 +27,13 @@ Create the virtualenv:
 ### Remember to be inside the created virtualenv:
 
 Select Python Interpreter in VSCODE and Execute the application
+
+# End Points 
+
+    GET - /api/users?since={number}
+    
+    GET - /api/users/:username/details
+    
+    GET - /api/users/:username/repos
         
-# Have fun.
+### Have fun.
