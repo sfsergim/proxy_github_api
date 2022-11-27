@@ -1,0 +1,6 @@
+Flask
+flask_restful
+requests
+python-dotenv
+pytest
+pytest-flask
