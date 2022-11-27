@@ -11,6 +11,15 @@ from app.domain.service.authentication import ValidateJson
 
 config = config_module.get_config()
 
+def snake_to_camel(name):
+    result = []
+    for index, part in enumerate(name.split('_')):
+        if index == 0:
+            result.append(part.lower())
+        else:
+            result.append(part.capitalize())
+    return ''.join(result)
+
 class ResourceBase(Resource):
     http_methods_allowed = ['GET', 'POST', 'PUT', 'DELETE']
     entity_class = None
@@ -72,6 +81,20 @@ class ResourceBase(Resource):
             payload.update(self.transform_key(request.view_args, self.camel_to_snake))
         return payload
 
+
+    @property
+    def options(self, *args, **kwargs):
+        return {'result': True}
+
+    def response(self, data_dict):
+        return {snake_to_camel(key): value for key, value in data_dict.iteritems()}
+
+    def return_ok(self, **extra):
+        result = {'result': 'OK'}
+        if extra is not None:
+            result.update(extra)
+        return result
+
     def return_not_found(self, exception=None):
         return {'result': 'error', 'error': 'Not Found', 'exception': str(exception)}, 404
 
@@ -80,7 +103,6 @@ class ResourceBase(Resource):
 
     def return_bad_request(self, exception=None):
         return {'result': 'error', 'error': 'Bad Request', 'exception': str(exception)}, 400
-
 
 class UserLoginResource(ResourceBase):
     http_methods_allowed = ['GET', 'POST']
